@@ -1,26 +1,26 @@
 ## Problem Description:
 
-The purpose of this C++ program is to simulate a simple banking system that allows a user to manage their account, including depositing and withdrawing money, updating account details, and investing money at specified rates. It also includes age-dependent recommendations for investments. 
+This C++ program's goal is to replicate a basic banking system that enables users to manage their accounts, including making deposits and withdrawals, changing account information, and making investments at predetermined rates. Additionally, age-specific investing advice is included. 
 
 ## Program Design and Algorithms:
 
-The program utilizes a single `struct` named `data1` to store customer details like first name, last name, amount of money, age, and money to be managed.
+To store client information such first and last names, the amount of money, the customer's age, and the amount of money to be handled, the software uses a single `struct` called `data1`.
 
-It uses two functions apart from `main()`. `inputdata()` is responsible for reading existing customer details from a file named `input.txt` and `updata()` updates customer data in a file named `newdata.txt`.
+`main()` is not the only function it calls; two more are. The functions `inputdata()` and `updata()` are in charge of reading and updating the customer data in the files `newdata.txt` and `input.txt`, respectively.
 
-In the `main()` function, the program checks whether a user has an account, and performs different operations based on the response. It handles deposits and withdrawals, updates user information, and provides a simple investment function with different rates based on user age.
+The software determines if a user has an account in the `main()` function, and then it decides what to do based on the result. It manages deposits and withdrawals, maintains user data, and offers a basic investing function with varying rates dependent on user age.
 
-The `manage()` function displays the available investment options based on the user's age.
+The `manage()` function evaluate the available investment options based on the user's age which is old or young people.
 
 ## User Interface:
 
-When a user runs the program, they're asked whether they have an account. If they do, they're prompted to input their VIP code. They can then choose to deposit or withdraw money, or update their information.
+The question of having an account is presented to the user when they launch the software. If they do, a popup for their VIP code appears. After that, they may decide whether to make a deposit or withdrawal or change their details.
 
-If a user does not have an account, they're prompted to create one by inputting their first name, last name, and age. They are then given a unique VIP code.
+A user is asked to enter their first name, last name, and age in order to establish an account if they don't already have one. After that, they receive a special VIP code.
 
-In both cases, users are given the option to invest money, and are shown a list of available investment options. They can choose an option and specify the amount they'd like to invest and for how many years.
+Users are offered the choice to invest money in both scenarios, and are presented with a selection of possible investment possibilities. They can select a possibility and set the sum and duration of their investment.
 
-The updated information is saved in `newdata.txt` once the user finishes using the program.
+We will save the updated information in `newdata.txt` while the user finishing using the program.
 
 ## Code Snippets:
 
@@ -34,7 +34,7 @@ struct data1
 }	data[1000000];
 ```
 
-This code block defines a struct named `data1` for storing customer details.
+This code block creates the struct `data1` to hold the client information.
 
 ```c++
 void inputdata()
@@ -49,7 +49,7 @@ void inputdata()
 }
 ```
 
-This `inputdata()` function is responsible for reading customer details from a file named `input.txt`.
+The `inputdata()` method is in charge of reading client information from the `input.txt` file.
 
 ```c++
 void updata()
@@ -64,11 +64,11 @@ void updata()
 }
 ```
 
-This `updata()` function updates customer details in a file named `newdata.txt`.
+This `updata()` function will update the customers' details under the file `newdata.txt`.
 
 ## Main Function:
 
-The `main()` function is the heart of this program where all the operations are defined and coordinated. It takes inputs from the users, calls the appropriate functions, and manipulates the data structure based on user inputs.
+The `main()` function is the core of the program, which defines and coordinates all operations. In response to user inputs, it calls the relevant functions, manipulates the data structure, and accepts input from the user.
 
 ```c++
 int main()
@@ -81,18 +81,17 @@ int main()
 	return 0;
 }
 ```
-At the start, `inputdata()` is called to load the existing user data. After performing several operations based on user inputs, `updata()` is called to store the updated data in `newdata.txt` file.
+`inputdata()` is first used to load the pre-existing user data. `updata()` is called to save the updated data in the `newdata.txt` file once a number of actions depending on user inputs have been completed.
 
 ## Operations:
 
-The operations a user can perform are:
-- Creation of a new account
-- Depositing money
-- Withdrawing money
-- Updating personal information
+The operations of a user that can perform:
+- Creation the new account
+- Depositing money or Withdrawing money
+- Updating own information
 - Checking and managing investments
 
-Here is an example of how a deposit is handled:
+An example of how a deposit handled:
 
 ```c++
 else//save
@@ -105,19 +104,19 @@ else//save
 	data[VIP].money+=n;
 }	
 ```
-This part of code is executed when the user chooses to deposit money. It asks the user for the amount they want to deposit, and then adds this amount to the `money` attribute of the `data` structure at the index `VIP`.
+When a user decides to make a deposit, this section of code is run. The user's desired deposit amount is requested, and the requested amount is then added to the `money` property of the `data` structure at the index `VIP`.
 
 ## User Manual:
 
-The user interface is designed to be as interactive as possible. When the user runs the program, they are asked a series of questions to perform operations. The user is expected to provide their inputs based on the prompts on the console.
+As much interaction as feasible is included into the user interface. The user is prompted with a series of questions when they launch the application in order to carry out activities. According to the console's instructions, the user is asked to enter their inputs.
 
-- To deposit money, when asked "withdraw or save money", the user should input `1` and then `0` for deposit. The user will be asked to enter the amount to deposit.
+- The user should enter `1` for withdrawal and `0` for deposit when prompted "withdraw or save money." The user will be prompted to input the deposit amount.
 
-- To withdraw money, similar to deposit, the user should input `1` and then `1` for withdrawal. Then the user needs to input the amount to withdraw.
+- If the user want to withdraw money, or to deposit, the user need to input `1` and then `1` for withdrawal. Then the user can input the amount that they want to withdraw. 
 
-- To manage investments, when asked "Do you want to manage money?", the user should input `1` for yes. Then the user is presented with different investment options based on their age. The user should input the corresponding number of the chosen option.
+- If the user want to manage investments, the user need to input `1` for yes if the system asked "Do you want to manage money?". Then the system will show with different investment options based on their age which is old or young people for the user. Then the user can input the chosen option with the corresponding number showing.
 
-It's also important to note that, for now, the program does not provide error checks for wrong inputs. If wrong input types are provided, the program may crash or behave unexpectedly. 
+There is also another important note need to know which is the program will not show the error checks for wrong inputs now. So if the user input the wrong things that were not matched to the program, the program will crash. 
 
 ## Data Structure:
 
